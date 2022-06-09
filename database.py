@@ -77,37 +77,3 @@ def frequent_5(conn):
 		response[key] = value
 
 	return (json.dumps(response, indent=2, sort_keys=True))
-
-
-# response in JSON form
-
-# for row in result:
-    # mydict.add(row[0],({"name":row[1],"email":row[2],"phone":row[3]}))
-
-# select id, title, description, published_at FROM video WHERE to_tsvector(title || ' ' || description) @@ to_tsquery(term)
-
-# ALTER TABLE LITERATURE ADD COLUMN ts tsvector GENERATED ALWAYS AS (to_tsvector('english', abstract)) STORED;
-
-# CREATE INDEX ts_idx ON LITERATURE USING GIN (ts);
-
-# SELECT PM_ID FROM LITERATURE WHERE ts @@ to_tsquery('english', 'tornado');
-
-
-# FUTURE
-# SELECT to_tsvector('The quick brown fox jumped over the lazy dog')  
-#     @@ to_tsquery('fox');
-
-# CREATE TABLE SEARCH_COUNT(word CHARACTER(50) PRIMARY KEY     NOT NULL, COUNT           BIGINT);
-
-# "UPDATE Literature SET (PM_ID, TITLE, ABSTRACT, PUBLICATION_TYPES, MESH_TERMS, SUBSTANCES) VALUES (%s,%s,%s,%s,%s,%s) WHERE PM_ID IS %s", (row[0], row[1], row[2], row[3], row[4], row[5], row[0]))
-
-# create_literature_table()
-
-# SELECT * FROM Literature;
-
-# CREATE TABLE Literature(PM_ID CHARACTER(8) PRIMARY KEY     NOT NULL,TITLE           TEXT    NOT NULL,ABSTRACT        TEXT,  ,PUBLICATION_TYPES         JSONB,MESH_TERMS         JSONB,SUBSTANCES         JSONB);
-
-# ALTER TABLE ONLY Literature ADD COLUMN "created_at" TIMESTAMP DEFAULT NOW();
-# ALTER TABLE ONLY Literature ADD COLUMN "id" TIMESTAMP DEFAULT NOW();
-
-# INSERT INTO Literature (PM_ID, TITLE, ABSTRACT, PUBLICATION_TYPES, MESH_TERMS, SUBSTANCES) VALUES (row[0], row[1], row[2], row[3], row[4], row[5])

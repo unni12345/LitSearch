@@ -96,21 +96,3 @@ class Literature:
 
 		# write to csv
 		pd.DataFrame(self.arr, columns = self.headers).to_csv('data.csv')
-
-# script for testing
-
-# litsearch = Literature()
-# litsearch.start()
-
-# filter_ = 'Humans'
-# resp_ = database.get_filtered_on_mesh_terms(litsearch.conn, filter_)
-# print("Humans ->", resp_)
-
-# word = 'pathology'
-# resp = database.search(litsearch.conn, word)
-# print("pathology ->", resp)
-
-
-# # db close
-# litsearch.close_connection()
-# print("connection closed")
