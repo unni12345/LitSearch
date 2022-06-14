@@ -4,7 +4,10 @@ import nlp_service
 def to_json(response):
 	mydict = {}
 	for row in response:
-		 mydict[row[0]] = {"title":row[1],"abstract":row[2],"publication_types":row[3], "mesh_terms": row[4], "substances": row[5], "entities": nlp_service.get_ner_response(row[2])}
+		entities = ""
+		if row[2] is not None:
+			entities = nlp_service.get_ner_response(row[2])
+		mydict[row[0]] = {"title":row[1],"abstract":row[2],"publication_types":row[3], "mesh_terms": row[4], "substances": row[5], "entities": entities}
 	return json.dumps(mydict, indent=2, sort_keys=True)
 
 
